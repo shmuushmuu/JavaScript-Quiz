@@ -16,6 +16,21 @@ function displayTime(seconds) {
     if (seconds === 1) {
         label = "second";
     } 
+    timerEl.textContent = seconds " " + label + "left on the clock!";
+}
+
+function countdown() {
+    var timeLeft = 75;
+    displayTime(timeLeft);
+    var timeInterval = setInterval(function () {
+        timeLeft--;
+        displayTime(timeLeft);
+        if (timeLeft === 0) {
+            clearInterval(timeInterval);
+        // I need code here for the page moving on since time is up
+            timerEl.textContent = "TIME'S UP!";
+    }
+  }, 1000);
 }
 
 var displayQuestion = function() {
