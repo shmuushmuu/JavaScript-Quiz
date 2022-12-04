@@ -1,4 +1,5 @@
 var nextEl = document.querySelector('#next');
+var timerEl = document.getElementById('countdown');
 var cursor = 0;
 
 var questions = [
@@ -8,8 +9,14 @@ var questions = [
     "What would you use to select multiple elements from your HTML at the same time?",
     "What tells the user agent that if the event does not get explicitly handled, its default action should not be taken as it normally would?",
 ];
-
 var answers = ["a, b, c, d"];
+
+function displayTime(seconds) {
+    var label = "seconds";
+    if (seconds === 1) {
+        label = "second";
+    } 
+}
 
 var displayQuestion = function() {
     nextEl.textContent = questions[cursor];
