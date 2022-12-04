@@ -1,5 +1,5 @@
 var nextEl = document.querySelector('#next');
-var timerEl = document.getElementById('countdown');
+var timerEl = document.querySelector('#countdown');
 var cursor = 0;
 
 var questions = [
@@ -10,24 +10,24 @@ var questions = [
     "What tells the user agent that if the event does not get explicitly handled, its default action should not be taken as it normally would?",
 ];
 var answers = ["a, b, c, d"];
+var secondsLeft = 75;
 
 function displayTime() {
     var label = "seconds";
     if (secondsLeft === 1) {
-        label = "second";
+        label = "second"
     } 
-    timerEl.textContent = secondsLeft+  " " + label + "left on the clock!";
+    timerEl.textContent = seconds +  " " + label + "left on the clock!";
 }
 
 function countdown() {
-    var timeLeft = 75;
-    displayTime(timeLeft);
+    displayTime();
     var timeInterval = setInterval(function() {
-        timeLeft--;
-        displayTime(timeLeft);
-        if (timeLeft === 0) {
+        secondsLeft--;
+        displayTime();
+    
+        if (secondsLeft === 0) {
             clearInterval(timeInterval);
-        // I need code here for the page moving on since time is up
             alert("TIME'S UP!");
     }
   }, 1000);
@@ -47,3 +47,4 @@ var advance = function() {
 nextEl.addEventListener('click', advance);
 
 displayQuestion();
+displayTime();
