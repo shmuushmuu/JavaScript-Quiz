@@ -2,11 +2,11 @@ var nextEl = document.querySelector('#next');
 var cursor = 0;
 
 var questions = [
-    "Click to begin! Aim for the fastest score.";
-    "Which of the following is not a class in Dungeons and Dragons 5th Edition?",
-    "Which of the following is not a damage type in D&D 5e?",
-    "Which of the following is not a school of magic in D&D 5e?",
-    "What is the maximum amount magical items a player character can attune to in D&D 5e?",
+    "I would use this function to tell my Java Script what to do when a user clicks on a button.",
+    "What punctuation is used for an array?",
+    "What is used to tell a function to run until a certain requirement is met?",
+    "What would you use to select multiple elements from your HTML at the same time?",
+    "What tells the user agent that if the event does not get explicitly handled, its default action should not be taken as it normally would?",
 ];
 
 var answers = ["a, b, c, d"];
