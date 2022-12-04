@@ -11,7 +11,7 @@ var questions = [
 
 var answers = ["a, b, c, d"];
 
-var displayQuestion = function () {
+var displayQuestion = function() {
     nextEl.textContent = questions[cursor];
 }
 
