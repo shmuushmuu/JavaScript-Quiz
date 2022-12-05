@@ -9,8 +9,20 @@ var questions = [
             a: "Ranger",
             b: "Bard",
             c: "Artificer",
-            d: "Alchemist"
+            d: "Priest"
+        },
+        correct: "d",
+    },
+    {
+        Headline: "Which of the following is not an attribute in D&D 5e?",
+        answers: {
+            a: "Charisma",
+            b: "Power",
+            c: "Constitution",
+            d: "Wisdom"
         }
+    }
+
         "I would use this function to tell my Java Script what to do when a user clicks on a button.",
         "What punctuation is used for an array?",
         "What is used to tell a function to run until a certain requirement is met?",
