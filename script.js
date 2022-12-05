@@ -1,5 +1,7 @@
-var nextEl = document.querySelector('#next');
-var timerEl = document.querySelector('#countdown');
+var nextEl = document.querySelector('.next');
+var timerEl = document.querySelector('.countdown');
+var buttonEl = document.querySelector('#possible');
+var startEl = document.querySelector('#start');
 var cursor = 0;
 var secondsLeft = 75;
 var questions = [
@@ -65,26 +67,27 @@ var questions = [
     }
     ];
 
-function displayTime() {
-    var label = "seconds";
-    if (secondsLeft === 1) {
-        label = "second";
-    } 
-    timerEl.textContent = " " + label + "left on the clock!";
-}
-
-function countdown() {
-    displayTime(secondsLeft);
-    var timeInterval = setInterval(function() {
-        secondsLeft--;
-        displayTime(secondsLeft);
+// function displayTime() {
+//     var label = "seconds";
+//     if (secondsLeft === 1) {
+//         label = "second";
+//     } 
+//     timerEl.textContent = secondsLeft + " " + label + "left on the clock!";
+// }
+// for displayTime() {
+// function countdown() {
+//     displayTime(secondsLeft);
+//     var timeInterval = setInterval(function() {
+//         secondsLeft--;
+//         displayTime(secondsLeft);
     
-        if (secondsLeft <= 0) {
-            clearInterval(timeInterval);
-            alert("TIME'S UP!");
-    }
-  }, 1000);
-}
+//         if (secondsLeft <= 0) {
+//             clearInterval(timeInterval);
+//             alert("TIME'S UP!");
+//     }
+//   }, 1000);
+// }
+// }
 
 var displayQuestion = function() {
     nextEl.textContent = questions[cursor];
