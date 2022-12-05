@@ -3,12 +3,21 @@ var timerEl = document.querySelector('#countdown');
 var cursor = 0;
 
 var questions = [
-    "I would use this function to tell my Java Script what to do when a user clicks on a button.",
-    "What punctuation is used for an array?",
-    "What is used to tell a function to run until a certain requirement is met?",
-    "What would you use to select multiple elements from your HTML at the same time?",
-    "What tells the user agent that if the event does not get explicitly handled, its default action should not be taken as it normally would?",
-];
+    {
+        Headline: "Which of the following is not a class in D&D 5e?",
+        answers: {
+            a: "Ranger",
+            b: "Bard",
+            c: "Artificer",
+            d: "Alchemist"
+        }
+        "I would use this function to tell my Java Script what to do when a user clicks on a button.",
+        "What punctuation is used for an array?",
+        "What is used to tell a function to run until a certain requirement is met?",
+        "What would you use to select multiple elements from your HTML at the same time?",
+        "What tells the user agent that if the event does not get explicitly handled, its default action should not be taken as it normally would?",
+    }
+    ];
 var answers = ["a, b, c, d"];
 var secondsLeft = 75;
 
@@ -45,6 +54,13 @@ var advance = function() {
 };
 
 nextEl.addEventListener('click', advance);
+
+buttonContainer.addEventListener('click, function(event)') {
+    var element = event.target;
+    if (element.matches("li")) {
+        //code here
+    }
+};
 
 displayQuestion();
 displayTime();
