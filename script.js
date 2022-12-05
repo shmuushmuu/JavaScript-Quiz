@@ -1,7 +1,7 @@
 var nextEl = document.querySelector('#next');
 var timerEl = document.querySelector('#countdown');
 var cursor = 0;
-
+var secondsLeft = 75;
 var questions = [
     {
         Headline: "Which of the following is not a class in D&D 5e?",
@@ -19,7 +19,7 @@ var questions = [
             a: "Charisma",
             b: "Power",
             c: "Constitution",
-            d: "Wisdom"
+            d: "Wisdom",
         },
         correct: "b",
     },
@@ -29,7 +29,7 @@ var questions = [
             a: "It gives you advantage on a roll of your choice.",
             b: "It guarantees that you succeed on every saving throw for the next round of combat.",
             c: "It gives a +10 to your next attack.",
-            d: "Sam, DM inspiration isn't a thing. Loser."
+            d: "Sam, DM inspiration isn't a thing. Loser.",
         },
         correct: "a",
     },    
@@ -39,7 +39,7 @@ var questions = [
             a: "High Elf",
             b: "Wood Elf",
             c: "Dark Elf",
-            d: "Sam, no elves get a +1 to charisma. Idiot."
+            d: "Sam, no elves get a +1 to charisma. Idiot.",
         },
         correct: "c",
     },
@@ -65,8 +65,6 @@ var questions = [
     }
     ];
 
-var secondsLeft = 75;
-
 function displayTime() {
     var label = "seconds";
     if (secondsLeft === 1) {
@@ -76,12 +74,12 @@ function displayTime() {
 }
 
 function countdown() {
-    displayTime();
+    displayTime(secondsLeft);
     var timeInterval = setInterval(function() {
         secondsLeft--;
-        displayTime();
+        displayTime(secondsLeft);
     
-        if (secondsLeft === 0) {
+        if (secondsLeft <= 0) {
             clearInterval(timeInterval);
             alert("TIME'S UP!");
     }
@@ -97,16 +95,18 @@ var advance = function() {
         cursor++;
     }
     displayQuestion();
+    displayTime();
 };
 
 nextEl.addEventListener('click', advance);
 
-buttonContainer.addEventListener('click, function(event)') {
-    var answers = event.target;
-    if (element.matches("li")) {
+//buttonContainer.addEventListener('click, function(event)') {
+//    var answers = event.target;
+//    if (element.matches("li")) {
         //code here
-    }
-};
+//    }
+//};
 
 displayQuestion();
 displayTime();
+countdown():
