@@ -68,9 +68,9 @@ var questions = [
 function displayTime() {
     var label = "seconds";
     if (secondsLeft === 1) {
-        label = "second"
+        label = "second";
     } 
-    timerEl.textContent = seconds +  " " + label + "left on the clock!";
+    timerEl.textContent = " " + label + "left on the clock!";
 }
 
 function countdown() {
@@ -109,4 +109,4 @@ nextEl.addEventListener('click', advance);
 
 displayQuestion();
 displayTime();
-countdown():
+countdown();
