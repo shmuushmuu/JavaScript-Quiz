@@ -20,17 +20,22 @@ var questions = [
             b: "Power",
             c: "Constitution",
             d: "Wisdom"
-        }
+        },
+        correct: "b",
     }
+    {
+        Headline: "What does DM inspiration do?",
+            a: "It gives you advantage on a roll of your choice.",
+            b: "It guarantees that you succeed on every saving throw for the next round of combat.",
+            c: "It gives a +10 to your next attack.",
+            d: "It provides you a +3 AC for the next minute of game play."
+        },
+        correct: "a",
+    {
 
-        "I would use this function to tell my Java Script what to do when a user clicks on a button.",
-        "What punctuation is used for an array?",
-        "What is used to tell a function to run until a certain requirement is met?",
-        "What would you use to select multiple elements from your HTML at the same time?",
-        "What tells the user agent that if the event does not get explicitly handled, its default action should not be taken as it normally would?",
     }
     ];
-var answers = ["a, b, c, d"];
+
 var secondsLeft = 75;
 
 function displayTime() {
@@ -68,7 +73,7 @@ var advance = function() {
 nextEl.addEventListener('click', advance);
 
 buttonContainer.addEventListener('click, function(event)') {
-    var element = event.target;
+    var answers = event.target;
     if (element.matches("li")) {
         //code here
     }
