@@ -22,17 +22,46 @@ var questions = [
             d: "Wisdom"
         },
         correct: "b",
-    }
+    },
     {
         Headline: "What does DM inspiration do?",
+        answers: {
             a: "It gives you advantage on a roll of your choice.",
             b: "It guarantees that you succeed on every saving throw for the next round of combat.",
             c: "It gives a +10 to your next attack.",
-            d: "It provides you a +3 AC for the next minute of game play."
+            d: "Sam, DM inspiration isn't a thing. Loser."
         },
         correct: "a",
+    },    
     {
-
+        Headline: "Which subrace of elf gets a +1 to their charisma?",
+        answers: {
+            a: "High Elf",
+            b: "Wood Elf",
+            c: "Dark Elf",
+            d: "Sam, no elves get a +1 to charisma. Idiot."
+        },
+        correct: "c",
+    },
+    {
+        Headline: "What dice would you roll for an athletics check?",
+        answers: {
+            a: "d12",
+            b: "d20",
+            c: "d100",
+            d: "Sam, you don't roll for an athletics check. Dork.",
+        },
+        correct: "b",
+    },
+    {
+        Headline: "What following monster are you actually able to play?",
+        answers: {
+            a: "Dragon",
+            b: "Werewolf",
+            c: "Lich",
+            d: "Sam, you can play whatever you and your DM agree upon... but man, you're handsome. Wow."
+        },
+        correct: "d",
     }
     ];
 
