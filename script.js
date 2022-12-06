@@ -1,7 +1,12 @@
 var nextEl = document.querySelector('#next');
 var timerEl = document.querySelector('.countdown');
-var buttonEl = document.querySelector('#possible');
 var startEl = document.querySelector('#startButton');
+var quizEl = document.querySelector('.quiz');
+var answerA = document.getElementById("a");
+var answerB = document.getElementById("b");
+var answerC = document.getElementById("c");
+var answerD = document.getElementById("d");
+
 var cursor = 0;
 var secondsLeft = 75;
 var questions = [  {
