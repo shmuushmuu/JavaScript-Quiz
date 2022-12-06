@@ -9,7 +9,6 @@ var answerD = document.getElementById("d");
 
 var cursor = 0;
 var secondsLeft = 75;
-var score = 0;
 var questions = [  {
         Headline: "Which of the following is not a class in D&D 5e?",
         answers: {
