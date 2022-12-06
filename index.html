@@ -4,27 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <title>D&D 5e Quiz</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./assets/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylsheet" href="./assets/style.css">
 </head>
 
 <body>
- <header>
-    <h1>Dungeons and Dragons 5th Edition Quiz</h1>
-        <button id="start"></button> 
-        <h2>Do your best on the quiz and try to get the fastest time! Wrong answers will give you a time penalty, so don't rush through it.</h2>
-    <div class = countdown></div>
- </header>
- <section class="questions" data-index="0">
-    <h3 id="next"></h3>
-    <div id="answers">
-        <button id="a" data-choice="a">a</button>
-        <button id="b" data-choice="b">b</button>
-        <button id="c" data-choice="c">c</button>
-        <button id="d" data-choice="d">d</button>
-    </div>
- </section>
+<section class = container>
+     <header>
+        <h1>JavaScript Quiz</h1>
+    </header>
+    <section class="question" data-index="0">
+        <h2 id="next"></h2>
+        <div id="possible"></div>
+    </section>
+</section>
  <script src="script.js"> </script>
 </body>
 

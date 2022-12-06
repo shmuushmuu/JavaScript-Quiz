@@ -1,5 +1,5 @@
-var nextEl = document.querySelector('#next');
-var timerEl = document.querySelector('#countdown');
+var nextEl = document.querySelector('.next');
+var timerEl = document.querySelector('.countdown');
 var buttonEl = document.querySelector('#answers');
 var startEl = document.querySelector('#start');
 var cursor = 0;
@@ -91,7 +91,7 @@ function countdown() {
 startEl.addEventListener('click', advance);
 
 var displayQuestion = function() {
-    nextEl.textContent = Headline[cursor];
+    nextEl.textContent = questions[cursor];
 }
 
 var advance = function() {
