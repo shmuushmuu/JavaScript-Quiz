@@ -1,7 +1,8 @@
+var container = document.querySelector('.container');
 var nextEl = document.querySelector('#next');
 var timerEl = document.querySelector('.countdown');
 var startEl = document.querySelector('#startButton');
-var quizEl = document.querySelector('.quiz');
+var quizEl = document.querySelector('.quizContainer');
 var gameOver = document.querySelector('.gameOver');
 var questions = document.querySelectorAll('.question');
 
@@ -38,7 +39,15 @@ function countdown() {
 }
 
 
-startEl.addEventListener('click', advance);
+startEl.addEventListener('click', advance); {
+    countdown();
+    displayQuestion();
+    var sections = document.querySelectorAll('.section');
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+    }
+    quizEl.style.display = "block";
+}
 
 var displayQuestion = function() {
     nextEl.textContent = questions[cursor];
