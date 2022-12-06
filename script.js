@@ -1,17 +1,16 @@
-var nextEl = document.querySelector('.next');
+var nextEl = document.querySelector('#next');
 var timerEl = document.querySelector('.countdown');
-var buttonEl = document.querySelector('#answers');
+var buttonEl = document.querySelector('#possible');
 var startEl = document.querySelector('#start');
 var cursor = 0;
-var secondsLeft = 75;
-var questions = [
-    {
+var secondsLeft = 5;
+var questions = [  {
         Headline: "Which of the following is not a class in D&D 5e?",
         answers: {
             a: "Ranger",
             b: "Bard",
             c: "Artificer",
-            d: "Priest"
+            d: "Priest",
         },
         correct: "d",
     },
@@ -72,7 +71,7 @@ function displayTime() {
     if (secondsLeft === 1) {
         label = "second";
     } 
-    timerEl.textContent = secondsLeft + " " + label + "left on the clock!";
+    timerEl.textContent = secondsLeft + " " + label + " left on the clock!";
 }
 function countdown() {
     displayTime(secondsLeft);
