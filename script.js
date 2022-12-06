@@ -11,8 +11,9 @@ var secondsLeft = 75;
 var answers = ["a", "b", "a", "c", "b", "d"]
     
 var advance = function() {
-    displayQuestion();
-    displayTime();
+    var correct = true;
+  //  displayQuestion();
+  //  displayTime();
     if (cursor < questions.length -1) {
         cursor++;
     }
@@ -54,13 +55,13 @@ var displayQuestion = function() {
 }
 
 
-//buttonContainer.addEventListener('click, function(event)') {
-//    var answers = event.target;
-//    if (element.matches("li")) {
-        //code here
-//    }
-//};
+buttonContainer.addEventListener('click, function(event)') {
+    var element = event.target;
+   if (element.matches("button")) {
+        advance()
+    }
+};
 
-displayQuestion();
-displayTime();
-countdown();
+//displayQuestion();
+//displayTime();
+//countdown();
