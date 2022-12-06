@@ -1,9 +1,9 @@
 var nextEl = document.querySelector('#next');
 var timerEl = document.querySelector('.countdown');
 var buttonEl = document.querySelector('#possible');
-var startEl = document.querySelector('#start');
+var startEl = document.querySelector('#startButton');
 var cursor = 0;
-var secondsLeft = 5;
+var secondsLeft = 75;
 var questions = [  {
         Headline: "Which of the following is not a class in D&D 5e?",
         answers: {
@@ -79,7 +79,7 @@ function countdown() {
         secondsLeft--;
         displayTime(secondsLeft);
     
-        if (secondsLeft <= 0) {
+        if (secondsLeft === 0) {
             clearInterval(timeInterval);
             alert("TIME'S UP!");
     }
