@@ -1,3 +1,4 @@
+// declared and expressed variables at the top
 var container = document.querySelector('.container');
 var nextEl = document.querySelector('#next');
 var timerEl = document.querySelector('.countdown');
@@ -9,7 +10,8 @@ var questions = document.querySelectorAll('.question');
 var cursor = 0;
 var secondsLeft = 75;
 var answers = ["a", "b", "a", "c", "b", "d"]
-    
+
+// functions in the middle
 var advance = function() {
     var correct = true;
   //  displayQuestion();
@@ -40,6 +42,13 @@ function countdown() {
 }
 
 
+
+var displayQuestion = function() {
+    nextEl.textContent = questions[cursor];
+}
+
+// Events at the bottom
+
 startEl.addEventListener('click', advance); {
     countdown();
     displayQuestion();
@@ -50,17 +59,14 @@ startEl.addEventListener('click', advance); {
     quizEl.style.display = "block";
 }
 
-var displayQuestion = function() {
-    nextEl.textContent = questions[cursor];
-}
-
-
 buttonContainer.addEventListener('click, function(event)') {
     var element = event.target;
    if (element.matches("button")) {
         advance()
     }
 };
+
+
 
 //displayQuestion();
 //displayTime();
