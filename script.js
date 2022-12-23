@@ -13,39 +13,39 @@ var secondsLeft = 75;
 var answers = ["a", "b", "a", "c", "b", "d"]
 
 // functions in the middle
-var advance = function() {
+var advance = function () {
     var correct = true;
-  //  displayQuestion();
-  //  displayTime();
-    if (cursor < questions.length -1) {
+    //  displayQuestion();
+    //  displayTime();
+    if (cursor < questions.length - 1) {
         cursor++;
     }
-    };
+};
 
 function displayTime() {
     var label = "seconds";
     if (secondsLeft === 1) {
         label = "second";
-    } 
+    }
     timerEl.textContent = secondsLeft + " " + label + " left on the clock!";
 }
 
 function countdown() {
     displayTime(secondsLeft);
-    var timeInterval = setInterval(function() {
+    var timeInterval = setInterval(function () {
         secondsLeft--;
         displayTime(secondsLeft);
-    
+
         if (secondsLeft === 0) {
             clearInterval(timeInterval);
             alert("TIME'S UP!");
-    }
-  }, 1000);
+        }
+    }, 1000);
 }
 
 
 
-var displayNextQuestion = function() {
+var displayNextQuestion = function () {
     for (var question of questions) {
         console.log(question);
         if (question.CDATA_SECTION_NODE.index != cursor) {
@@ -56,10 +56,20 @@ var displayNextQuestion = function() {
             saveHiScore(initials);
             displayStoredPlayer();
         }
-
-        }
     }
+}
 
+var displayGameOver = function () {
+    console.log(gameOver);
+    if (gameOver.dataset.index != cursor) {
+        gameOver.style.display = 'none';
+    } else {
+        gameOver.style.display = 'block';
+        var initials = prompt('Enter Initials');
+        saveHighScore(initials);
+        displayStoredPlayer();
+    }
+}
 
 // Events at the bottom
 
@@ -73,15 +83,15 @@ startEl.addEventListener('click', advance); {
     quizEl.style.display = "block";
 }
 
-buttonContainer.addEventListener('click,' function(event)) {
+buttonContainer.addEventListener('click,' function (event)) {
     var element = event.target;
-   if (element.matches("button")) {
+    if (element.matches("button")) {
         advance()
     }
 };
 
 
 
-//displayQuestion();
-//displayTime();
-//countdown();
+displayNextQuestion();
+displayTime();
+countdown();
