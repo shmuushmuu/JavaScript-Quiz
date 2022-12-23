@@ -15,8 +15,8 @@ var answers = ["a", "b", "a", "c", "b", "d"]
 // functions in the middle
 var advance = function () {
     var correct = true;
-    //  displayQuestion();
-    //  displayTime();
+    displayNextQuestion();
+    displayTime();
     if (cursor < questions.length - 1) {
         cursor++;
     }
@@ -38,11 +38,14 @@ function countdown() {
 
         if (secondsLeft === 0) {
             clearInterval(timeInterval);
-            alert("TIME'S UP!");
+            cursor = 7;
+            displayNextQuestion();
+            if (gameOver.style.display != 'block') {
+                displayGameOver();
+            }
         }
     }, 1000);
 }
-
 
 
 var displayNextQuestion = function () {
@@ -79,7 +82,7 @@ var saveHighScore = function (initials) {
     localStorage.setItem('score', JSON.stringify(newScore));
 }
 
-var displayStoredPlayer = function() {
+var displayStoredPlayer = function () {
     var storedPlayer = localStorage.getItem('score');
     var playerObject = JSON.parse(storedPlayer);
     score.textContent = playerObject.playerInitials + ": score = " + playerObject.score;
@@ -89,7 +92,7 @@ var displayStoredPlayer = function() {
 
 startEl.addEventListener('click', advance); {
     countdown();
-    displayQuestion();
+    displayNextQuestion();
     var sections = document.querySelectorAll('.section');
     for (var i = 0; i < sections.length; i++) {
         sections[i].style.display = "none";
@@ -97,12 +100,12 @@ startEl.addEventListener('click', advance); {
     quizEl.style.display = "block";
 }
 
-buttonContainer.addEventListener('click,' function (event)) {
+buttonContainer.addEventListener('click,' function (event) {
     var element = event.target;
     if (element.matches("button")) {
         advance()
     }
-};
+});
 
 
 
