@@ -119,8 +119,7 @@ buttonContainer.addEventListener('click,' function (event) {
     }
 });
 
-
-
+hideStart();
 displayNextQuestion();
-displayTime();
 countdown();
+displayGameOver();
