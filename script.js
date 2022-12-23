@@ -6,6 +6,7 @@ var startEl = document.querySelector('#startButton');
 var quizEl = document.querySelector('.quizContainer');
 var gameOver = document.querySelector('.gameOver');
 var questions = document.querySelectorAll('.question');
+var highScores = document.querySelector('.highScores');
 
 var cursor = 0;
 var secondsLeft = 75;
@@ -28,6 +29,7 @@ function displayTime() {
     } 
     timerEl.textContent = secondsLeft + " " + label + " left on the clock!";
 }
+
 function countdown() {
     displayTime(secondsLeft);
     var timeInterval = setInterval(function() {
@@ -43,9 +45,21 @@ function countdown() {
 
 
 
-var displayQuestion = function() {
-    nextEl.textContent = questions[cursor];
-}
+var displayNextQuestion = function() {
+    for (var question of questions) {
+        console.log(question);
+        if (question.CDATA_SECTION_NODE.index != cursor) {
+            question.style.display = 'none';
+        } else {
+            hameOver.style.display = 'block';
+            var initials = prompt('Enter Initials');
+            saveHiScore(initials);
+            displayStoredPlayer();
+        }
+
+        }
+    }
+
 
 // Events at the bottom
 
@@ -59,7 +73,7 @@ startEl.addEventListener('click', advance); {
     quizEl.style.display = "block";
 }
 
-buttonContainer.addEventListener('click, function(event)') {
+buttonContainer.addEventListener('click,' function(event)) {
     var element = event.target;
    if (element.matches("button")) {
         advance()
