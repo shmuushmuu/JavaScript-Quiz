@@ -14,15 +14,18 @@ var answers = ["a", "b", "a", "c", "b", "d"]
 
 // functions in the middle
 var advance = function (event) {
-    var correct = true;
-    displayNextQuestion();
-    displayTime();
-    if (cursor < questions.length - 1) {
-        cursor++;
+    var element = event.target;
+    if (element.matches('.start button')) {
+        cursor ++;
+        countdown();
+        hideStart();
     }
+
+    displayNextQuestion();
+    displayGameOver();
 };
 
-function hideStart = function () {
+var hideStart = function () {
     console.log(start);
     if (start.dataset.index != cursor) {
         start.style.display = 'none';
