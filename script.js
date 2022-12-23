@@ -71,6 +71,14 @@ var displayGameOver = function () {
     }
 }
 
+var saveHighScore = function (initials) {
+    var newScore = {
+        playerInitials = initials,
+        score: numCorrectAnswers,
+    };
+    localStorage.setItem('score', JSON.stringify(newScore));
+}
+
 // Events at the bottom
 
 startEl.addEventListener('click', advance); {
