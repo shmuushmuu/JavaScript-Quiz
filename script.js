@@ -13,12 +13,21 @@ var secondsLeft = 75;
 var answers = ["a", "b", "a", "c", "b", "d"]
 
 // functions in the middle
-var advance = function () {
+var advance = function (event) {
     var correct = true;
     displayNextQuestion();
     displayTime();
     if (cursor < questions.length - 1) {
         cursor++;
+    }
+};
+
+function hideStart = function () {
+    console.log(start);
+    if (start.dataset.index != cursor) {
+        start.style.display = 'none';
+    } else {
+        start.style.display = 'flex';
     }
 };
 
