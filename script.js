@@ -79,6 +79,12 @@ var saveHighScore = function (initials) {
     localStorage.setItem('score', JSON.stringify(newScore));
 }
 
+var displayStoredPlayer = function() {
+    var storedPlayer = localStorage.getItem('score');
+    var playerObject = JSON.parse(storedPlayer);
+    score.textContent = playerObject.playerInitials + ": score = " + playerObject.score;
+}
+
 // Events at the bottom
 
 startEl.addEventListener('click', advance); {
