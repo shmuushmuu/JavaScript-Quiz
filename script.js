@@ -1,12 +1,13 @@
 // declared and expressed variables at the top
 var container = document.querySelector('.container');
-var nextEl = document.querySelector('#next');
-var timerEl = document.querySelector('.countdown');
-var startEl = document.querySelector('#startButton');
-var quizEl = document.querySelector('.quizContainer');
+var next = document.querySelector('#next');
+var timer = document.querySelector('.countdown');
+var start = document.querySelector('#startButton');
+var quiz = document.querySelector('.quizContainer');
 var gameOver = document.querySelector('.gameOver');
 var questions = document.querySelectorAll('.question');
 var highScores = document.querySelector('.highScores');
+var initials = "";
 
 var cursor = 0;
 var secondsLeft = 75;
@@ -26,7 +27,7 @@ var advance = function (event) {
 };
 
 var hideStart = function () {
-    console.log(start);
+    console.log(advance);
     if (start.dataset.index != cursor) {
         start.style.display = 'none';
     } else {
@@ -39,7 +40,7 @@ function displayTime() {
     if (secondsLeft === 1) {
         label = "second";
     }
-    timerEl.textContent = secondsLeft + " " + label + " left on the clock!";
+    timer.textContent = secondsLeft + " " + label + " left on the clock!";
 }
 
 function countdown() {
@@ -66,7 +67,7 @@ var displayNextQuestion = function () {
         if (question.CDATA_SECTION_NODE.index != cursor) {
             question.style.display = 'none';
         } else {
-            hameOver.style.display = 'block';
+            gameOver.style.display = 'block';
             var initials = prompt('Enter Initials');
             saveHiScore(initials);
             displayStoredPlayer();
@@ -88,7 +89,7 @@ var displayGameOver = function () {
 
 var saveHighScore = function (initials) {
     var newScore = {
-        playerInitials = initials,
+        playerInitials: initials,
         score: numCorrectAnswers,
     };
     localStorage.setItem('score', JSON.stringify(newScore));
@@ -102,24 +103,23 @@ var displayStoredPlayer = function () {
 
 // Events at the bottom
 
-startEl.addEventListener('click', advance); {
+start.addEventListener('click', advance); {
     countdown();
     displayNextQuestion();
     var sections = document.querySelectorAll('.section');
     for (var i = 0; i < sections.length; i++) {
         sections[i].style.display = "none";
     }
-    quizEl.style.display = "block";
+    quiz.style.display = "block";
 }
 
-buttonContainer.addEventListener('click,' function (event) {
+buttonContainer.addEventListener('click'); {
     var element = event.target;
     if (element.matches("button")) {
         advance()
     }
-});
+};
 
 hideStart();
 displayNextQuestion();
-countdown();
 displayGameOver();
